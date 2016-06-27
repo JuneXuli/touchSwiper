@@ -1,0 +1,73 @@
+@charset "utf-8";
+/*******************
+ * swiper1
+ ***************** */
+#swiper1{
+	height:30%;
+}
+#swiper1 .swiper-slide img{
+	width:100%;
+	height:100%;
+}
+
+
+/*******************
+ * cover-box   swiper2
+ ***************** */
+.cover-box{
+	width:100%;
+	height:100%;
+	position: fixed;
+	left:0;
+	top:0;
+	background-color:rgba(0,0,0,0.7);
+	z-index:50;
+	display: none;
+}
+#swiper2{
+	width:100%;
+	height:100%;
+}
+#swiper2 .swiper-slide{
+	position: relative;
+	width:100%;
+	height:100%;
+}
+#swiper2 .swiper-slide  .imgzoom{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	overflow:hidden;
+	/*垂直居中*/
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;*/
+	 /*box-pack 规定当框大于子元素的尺寸，在何处放置子元素*/
+	/*-webkit-box-pack: center;  
+	-ms-flex-pack:center;
+	-webkit-justify-content: center;
+	justify-content: center;*/
+	/*规定如何对齐框的子元素*/
+	/*-webkit-box-align: center;
+	-ms-flex-align: center;*/
+	/*定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式*/
+	/*-webkit-align-items: center;
+	align-items: center;*/
+}
+#swiper2 .swiper-slide img{
+	width:100%;
+	position: absolute;
+	top:50%;
+}
+#touchLog{
+	position: absolute;
+	color:#fff;
+	z-index:1000;
+	top:0;
+	left:0;
+}
+
+

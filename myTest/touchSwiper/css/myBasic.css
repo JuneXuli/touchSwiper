@@ -1,0 +1,14 @@
+@charset "utf-8";
+/*******************
+ * basic style 
+ ***************** */
+body, html{color:#333; font-family:'微软雅黑'; font-size:13px;}
+*{margin:0;padding:0;border:0;-webkit-user-select:text;  outline:none; word-break:break-all; word-wrap:break-word;}
+/*触摸并按住触摸目标的时候，禁止显示系统默认菜单*/
+a,img{-webkit-touch-callout:none}
+a{text-decoration:none; cursor:pointer; font-size:inherit; user-select: none;}
+ul,ol{list-style:none}
+input[type="password"],input[type="text"]{resize:none;outline:none;-webkit-appearance:none;
+										white-space:pre-wrap;word-wrap:break-word;background:#fff;overflow:scroll}
+.clear{clear:both}
+

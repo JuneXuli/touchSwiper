@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SwiperTest</title>
+		<link rel="stylesheet" href="../../style/swiper.css"  />
+		<script type="text/javascript" src="../../js/swiper.js"></script>
+		<style type="text/css">
+			swiper-container{width:150px;}
+			.slider{height:100px;}
+			.slider1{ background-color:#00C8A5;}
+			.slider2{ background-color:#FF4A69;}
+			.slider3{ background-color:#FFA200;}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide slider slider1" data-hash="slide1">slider1</div>
+				<div class="swiper-slide slider slider2" data-hash="slide2">slider2</div>
+				<div class="swiper-slide slider slider3" data-hash="slide3">slider3</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 1000,//可选选项，自动切换的时间间隔
+				initialSlide :0, //初始显示的索引
+				//direction:'vertical' //方向
+				speed:1000,  //滑动开始到结束的时间（默认为300）
+				autoplayDisableOnInteraction:true,   //用户操作swiper之后，是否禁止autoplay，默认true为停止
+				//autoplayStopOnLast:true,   //当切花到最后一个slide时停止自动切换
+				grabCursor:true,   //设置为true时指针会变成手掌形状，拖动时指针会变成抓手形状。
+				parallax:true,  //开启视差效果（相对于父元素的移动）
+				hashnav:true, //使用散列布局（有点像锚链接）
+				//setWrapperSize:true,  //开启这个设定会在Wrapper上添加等于sliders相加的宽高
+				//virtualTranslate:true, //虚拟位移，
+				//width:100,   //slide宽度
+				roundLengths:true //设定为true将slide的宽高取整(四舍五入)防止某些分辨率的屏幕上文组或边界模糊
+				nested:true,  //用于嵌套相同方向的swiper时，当切换到子swiper时停止父swiper的切换
+				
+			})
+		</script>
+	</body>
+</html>

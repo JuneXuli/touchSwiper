@@ -1,0 +1,117 @@
+@charset "utf-8";
+body, html{color:#333; font-family:'微软雅黑'; font-size:13px;}
+*{margin:0;padding:0;border:0;-webkit-user-select:text;  outline:none; word-break:break-all; word-wrap:break-word;}
+a,img{-webkit-touch-callout:none}
+a{text-decoration:none; cursor:pointer; font-size:inherit; user-select: none;}
+ul,ol{list-style:none}
+input[type="password"],input[type="text"]{resize:none;outline:none;-webkit-appearance:none;white-space:pre-wrap;word-wrap:break-word;background:#fff;overflow:scroll}
+.clear{clear:both}
+.table{display:table}
+.tableSpan{display:table-cell; vertical-align:middle}
+.ellipsis{overflow:hidden; text-overflow:ellipsis;-webkit-text-overflow:ellipsis; white-space:nowrap;}
+.mustCenter{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.btnNormal{width:100%; display:inline-block; text-align:center; padding:10px 0; background:#04be02; border-radius:4px; color:#fff; margin:5px 0; box-sizing:border-box; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); border: 1px solid rgba(0, 0, 0, 0.1); font-size:15px;}
+.smallBtn{display:inline-block; text-align:center; padding:10px 40px; background:#20c51f; border-radius:5px; color:#fff; margin:5px 0; font-size:15px; border: 1px solid rgba(0, 0, 0, 0.1);}
+.btnNormalWhite{width:100%; display:inline-block; text-align:center; padding:10px 0; background:#fff; border:solid 1px #ddd; border-radius:5px; color:#fff; margin:5px 0; box-sizing:border-box; color:#333; font-size:15px; border: 1px solid rgba(0, 0, 0, 0.1);}
+.btnNormal:active,.smallBtn:active,.btnNormalWhite:active{-webkit-transform: scale(0.99);}
+.inputNormal{width:100%; padding:10px 0px; border:solid 1px #ddd; border-radius:4px; font-size:13px; text-indent:10px; height:20px; line-height:20px;}
+.textareaNormal{width:100%; padding:10px 10px; border:solid 1px #ddd; border-radius:4px; font-size:13px; line-height:20px; height:100px; box-sizing:border-box}
+
+.textBig{font-size:16px;}
+.textNormal{font-size:14px;}
+.textMini{font-size:12px;}
+.textLight{color:#888}
+
+.textYellow{color:#ffa200}
+.textGreen{color:#1ab700}
+.textRed{color:#ff4b69}
+.textRed2{color:#ff4646}
+
+
+.showMsgBox{width:100%; padding:20px 18px; box-sizing:border-box; background:#fff; border-bottom:solid 1px #ddd;border-top:solid 1px #ddd;}
+
+.loadingImg{width:20px; height:20px; display:inline-block; position:relative; margin-right:5px}
+.loadingImg span{background:url(../images/loadingImg.png); width:20px; height:20px; display:inline-block; background-size:cover; position:absolute; left:0; top:5px}
+.imArrYou{width:6px; height:10.285px; display:inline-block; background:url(../images/imArrYou.png); background-size:cover}
+.imArrMe{width:6px; height:10.285px; display:inline-block; background:url(../images/imArrMe.png); background-size:cover}
+
+.iconImFace{background:url(../images/iconImFace.png); width:28px; height:28px; display:inline-block; background-size:cover; position:absolute; right:75px; top:1px;}
+.iconImAddIcon{background:url(../images/onWallActive.png); width:28px; height:28px; display:inline-block; background-size:cover;}
+.iconDele{background:url(../images/iconDele.png); width:20px; height:20px; display:inline-block; background-size:cover; position:absolute; top:-10px; right:-10px;}
+.iconImImg{background:url(../images/iconImImg.png); width:30px; height:30px; display:inline-block; background-size:cover; margin:15px auto}
+.backIcon{background:url(../images/iconImReturn.png); width:18px; height:18px; display:inline-block; background-size:cover; position:absolute; left:18px; top:14px;}
+.icon_infr130{background:url(../images/icon_infr130.png); width:50px; height:50px; display:inline-block; background-size:cover; margin-bottom:5px;}
+
+.wm_head{width:100%; height:85px; position:relative;}
+.wm_head .wm_head_bg{ width:100%; height:85px;}
+.wm_head .wave{position:absolute; bottom:0px; left:0; width:100%; z-index:8; max-height:15px}
+.wm_head_title{position:absolute; top:28px; left:0; padding-left:20px; color:#fff; font-size:14px; height:30px; line-height:30px;}
+.btnDiv{width:100%; padding:0 18px; margin-top:30px; text-align:center; box-sizing:border-box}
+.iocn_close_big{width:50px; height:50px; display:inline-block; background:url(../images/iocn_close_big.png); background-size:cover}
+.praise{width:30px; height:30px; display:inline-block; background:url(../images/praise.png); background-size:cover}
+.praised{width:30px; height:30px; display:inline-block; background:url(../images/praised.png); background-size:cover}
+
+.wm_head{width:100%; height:85px; position:relative;}
+.wm_head .wm_head_bg{ width:100%; height:85px;}
+.wm_head .wave{position:absolute; bottom:0px; left:0; width:100%; z-index:8; max-height:15px}
+.wm_head_title{ position:absolute; top:27px; left:0; padding-left:20px; color:#fff; font-size:15px; height:30px; line-height:30px;}
+
+.icon_right_arr{width:16px; height:16px; display:inline-block; background:url(../images/icon_right_arr.png); background-size:cover}
+
+.chatIcongivewine{width:24px; height:24px; display:inline-block; background:url(../images/chatIcongivewine.png); background-size:cover}
+.wineGiveIcon{width:24px; height:24px; display:inline-block; background:url(../images/wineGiveIcon.png); background-size:cover}
+
+.iconSelectNo{width:20px; height:20px; display:inline-block; background:url(../images/iconSelectNo.png); background-size:cover}
+.iconSelectNo.iconSelectYes{width:20px; height:20px; display:inline-block; background:url(../images/iconSelectYes.png); background-size:cover}
+
+.iocn_right_big{width:70px; height:70px; display:inline-block; background:url(../images/iocn_right_big.png); background-size:cover}
+.signIcon{width:57px; height:46px; display:inline-block; background:url(../images/signIcon.png); background-size:cover}
+.iconSignSit{width:25px; height:20px; display:inline-block; background:url(../images/iconSignSit.png); background-size:cover}
+
+.sendWine{width:10px; height:12px; display:inline-block; background:url(../images/sendWine.png); background-size:cover}
+.toTalk{width:13px; height:9px; display:inline-block; background: url(../images/toTalk.png); background-size:cover}
+.onloading{width:30px; height:30px; display:inline-block; background:url(../images/009.gif); background-size:cover}
+.iconImSign{width:28.5px; height:23px; display:inline-block; background:url(../images/iconImSign.png); background-size:cover; margin:18.5px auto}
+.iconImPhoto{width:29px; height:21px; display:inline-block; background:url(../images/photo.png); background-size:cover; margin:19.5px auto}
+.iconSendWine{width:20px; height:24px; display:inline-block; background:url(../images/iconSendWine.png); background-size:cover; margin:18px auto}
+.iconRich{width:28px; height:18px; display:inline-block; background:url(../images/iconRich.png); background-size:cover; margin:21px auto}
+.newIconImAdd{background:url(../images/iconImAdd.png); width:28px; height:28px; display:inline-block; background-size:cover; position:absolute; left:0; top:1px}
+.onWallGameIcon{width:21px; height:14px; display:inline-block; background:url(../images/onWallGameIcon.png); background-size:cover; margin:10px auto}
+.onWallMsgIcon{width:19px; height:16px; display:inline-block; background:url(../images/onWallMsgIcon.png); background-size:cover; margin:10px auto}
+
+.icon_module{background:url(../images/icon_admin_all.png); width:50px; height:50px; display:inline-block;}
+.icon_module20{background-position:-459px -103px}
+.icon_module9{background-position:-510px -1px}
+.icon_module19{background-position:-510px -103px}
+
+.onWall_newIcon1{background:url(../images/onWall_newIcon1.png); width:40px; height:40px; background-size:cover; display:inline-block;}
+.onWall_newIcon2{background:url(../images/onWall_newIcon2.gif); width:40px; height:40px; background-size:cover; display:inline-block;}
+.onWall_newIcon3{background:url(../images/onWall_newIcon3.png); width:40px; height:40px; background-size:cover; display:inline-block;}
+
+.dsIcon1{background:url(../images/dsIcon1.png); width:21px; height:22px; background-size:cover; display:inline-block;}
+.dsIcon2{background:url(../images/dsIcon2.png); width:21px; height:22px; background-size:cover; display:inline-block;}
+.dsIcon3{background:url(../images/dsIcon3.png); width:25px; height:16px; background-size:cover; display:inline-block;}
+
+.ds_bg{background:url(../images/ds_bg.png);}
+.ds_flower1{background:url(../images/ds_flower1.png); width:12px; height:19px; background-size:cover; display:inline-block; vertical-align:middle}
+.ds_flower2{background:url(../images/ds_flower2.png); width:12px; height:19px; background-size:cover; display:inline-block; vertical-align:middle}
+.ds_flower3{background:url(../images/ds_flower3.png); width:24px; height:18px; background-size:cover; display:inline-block; vertical-align:middle}
+
+.dsIcon_battle{background:url(../images/dsIcon_battle.png); width:8px; height:22px; background-size:cover; display:inline-block; vertical-align:middle}
+.dsIcon_mic{background:url(../images/dsIcon_mic.png); width:12px; height:17px; background-size:cover; display:inline-block; vertical-align:middle}
+.dsIcon_bigini{background:url(../images/dsIcon_bigini.png); width:21px; height:16px; background-size:cover; display:inline-block; vertical-align:middle}
+.dsIcon_flower{background:url(../images/dsIcon_flower.png); width:24px; height:18px; background-size:cover; display:inline-block; vertical-align:middle}

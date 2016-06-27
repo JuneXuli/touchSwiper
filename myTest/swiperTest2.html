@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta content="user-scalable=0,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<link rel="stylesheet" href="css/basic.css" />
+<link rel="stylesheet" href="css/swiper.css" />
+<style type="text/css">
+	html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    #swiper-container1{
+    	width:100%;
+    	height:30%;
+    }
+    #swiper-container1 .swiper-slide{
+    	/*width:100%;*/
+    	/*height:100%;*/
+    	text-align: center;
+    	font-size: 18px;
+    	background:#fff;
+    	
+    	/*垂直居中*/
+    	/*display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;*/
+		 /*box-pack 规定当框大于子元素的尺寸，在何处放置子元素*/
+		/*-webkit-box-pack: center;  */
+		/*-ms-flex-pack:center;*/
+		/*-webkit-justify-content: center;
+		justify-content: center;*/
+		/*规定如何对齐框的子元素*/
+		/*-webkit-box-align: center;
+		-ms-flex-align: center;*/
+		/*定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式*/
+		/*-webkit-align-items: center;
+		align-items: center;*/
+    }
+    #swiper-container1 .swiper-slide img{
+    	width:100%;
+    	height:100%;
+    }
+    
+    /*swiper-container2*/
+    #swiper-container2{
+       width:100%;
+       height:100%;
+       
+    }
+    #swiper-container2 .swiper-slide{
+    	text-align: center;
+    	font-size: 18px;
+    	/*垂直居中*/
+    	display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		 /*box-pack 规定当框大于子元素的尺寸，在何处放置子元素*/
+		-webkit-box-pack: center;  
+		-ms-flex-pack:center
+		-webkit-justify-content: center;
+		justify-content: center;
+		/*规定如何对齐框的子元素*/
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		/*定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式*/
+		-webkit-align-items: center;
+		align-items: center;
+    }
+    #swiper-container2 .swiper-slide img{
+    	width:100%;
+    	height:50%;
+    }
+    
+    /*lgimg-box*/
+    .lgimg-box{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0,0.8); z-index:50;
+   		width:100%;
+   		height:100%;
+   		position:fixed;
+   		left:0;
+   		top:0;
+   		background(0,0,0,0.8);
+   		z-index:50;
+   		display: none;
+		overflow: hidden;
+    }
+    .userTip{width:100%; position:absolute; left:0; bottom:30px; text-align:center;}
+    .userTip span{display:inline-block; padding:5px; color:#ccc; text-align:center; font-size:10px; background:rgba(0,0,0,0.5); border-radius:25px;}
+</style>
+</head>
+<body>
+	<div class="lgimg-box" onclick="lgImg.hide()">
+		<div class="userTip"><span>点击屏幕返回</span></div>
+		<div id="swiper-container2" class="swiper-container">
+			<div class="swiper-wrapper">
+				<!--<div class="swiper-slide"></div>
+				<div class="swiper-slide"></div>
+				<div class="swiper-slide"></div>-->
+			</div>
+			<div class="swiper-pagination swiper-pagination2"></div>
+		</div>
+	</div>
+	<div id="swiper-container1" class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" data-index="0" onclick="lgImg.show(this)"><img src="img/1.jpg" /></div>
+			<div class="swiper-slide" data-index="1"  onclick="lgImg.show(this)"><img src="img/2.jpg"  /> </div>
+			<div class="swiper-slide" data-index="2"  onclick="lgImg.show(this)"><img src="img/3.jpg"/></div>
+		</div>
+		<div class="swiper-pagination swiper-pagination1"></div>
+	</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/touch.min.js"></script>
+<script>
+	var swiper1 = new Swiper('#swiper-container1', {
+        pagination: '.swiper-pagination1',
+        paginationClickable: true
+        //autoplay:1000
+    });
+    var lgImg={
+    	swiper:null,
+    	loaded:false,
+    	initSwiper:function(setting){
+    		var defaultSet={pagination: '.swiper-pagination2',paginationClickable: true,initialSlide:0};
+    		defaultSet=$.extend(defaultSet,setting);
+      		this.swiper = new Swiper('#swiper-container2', defaultSet);
+    	},
+    	show:function(e){
+    		var actIndex=$(e).data("index");
+    		//没有加载过，需要初始化显示图片
+    		if(!this.loaded){
+    			this.loaded=true;
+    			//里边的图片应该现在才加载
+    			var lgImgs=[{id:'img_1',src:'img/1.jpg'},{id:'img_2',src:'img/2.jpg'},{id:'img_3',src:'img/3.jpg'}];
+    			var swiperSlideHtml='';
+    			for(var i=0;i<lgImgs.length;i++){
+    				swiperSlideHtml+='<div class="swiper-slide"><img id="'+lgImgs[i].id+'" src="'+lgImgs[i].src+'" /></div>'
+    			}
+    			$("#swiper-container2 .swiper-wrapper").html('').html(swiperSlideHtml);
+    		}
+    		$(".lgimg-box").show();
+    		this.initSwiper({initialSlide:actIndex});
+    	},
+    	hide:function(e){
+    		try{
+				lgImg.swiper.destroy(true);		
+			}catch(ex){}
+    		$('.lgimg-box').hide();
+    		var actIndex=this.swiper.activeIndex;
+    		//此时应该重新设置swiper的活动索引
+    		swiper1.slideTo(actIndex);
+    	}
+    }
+    $(function(){
+    	
+    });
+</script>
+</html>

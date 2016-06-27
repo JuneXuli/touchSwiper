@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta content="user-scalable=0,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<style type="text/css">
+	body,html{
+		margin:0;
+		padding:0;
+		text-align: center;
+    	color: white;
+	}
+    body{
+        /*background-color: #333;*/
+    	font-family: Georgia;
+	}
+	div.pinch-zoom {
+    	position: relative;
+    	-webkit-user-drag: none;
+    	width:100%;
+	}
+	div.pinch-zoom img{
+		width: 100%;
+		-webkit-user-drag: none;
+	}
+</style>
+</head>
+<body>
+	<div class="pinch-zoom">
+		<img src="img/1.jpg"  />
+	</div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/pinchzoom.js"></script>
+<script>
+	$(function(){
+		$('div.pinch-zoom').each(function () {
+			new RTP.PinchZoom($(this), {});
+		});
+	});
+</script>
+</html>

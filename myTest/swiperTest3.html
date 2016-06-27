@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta content="user-scalable=0,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<link rel="stylesheet" href="css/basic.css" />
+<link rel="stylesheet" href="css/swiper.css" />
+<style type="text/css">
+/*basic style*/
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+
+/*轮播图 style*/
+#swiper-container1{
+	width:100%;
+	height:30%;
+}
+#swiper-container1 .swiper-slide{
+	/*width:100%;*/
+	/*height:100%;*/
+	text-align: center;
+	font-size: 18px;
+	background:#fff;
+	
+	/*垂直居中*/
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;*/
+	 /*box-pack 规定当框大于子元素的尺寸，在何处放置子元素*/
+	/*-webkit-box-pack: center;  */
+	/*-ms-flex-pack:center;*/
+	/*-webkit-justify-content: center;
+	justify-content: center;*/
+	/*规定如何对齐框的子元素*/
+	/*-webkit-box-align: center;
+	-ms-flex-align: center;*/
+	/*定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式*/
+	/*-webkit-align-items: center;
+	align-items: center;*/
+}
+#swiper-container1 .swiper-slide img{
+	width:100%;
+	height:100%;
+}
+    
+    
+/*缩放图片弹框样式*/
+.imgzoom_pack{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,.7);
+	display:none;
+	z-index:50;
+}
+.imgzoom_pack .imgzoom_x{
+	color:#fff;
+	height:30px;
+	width:30px;
+	line-height:30px;
+	background:#000;
+	text-align:center;
+	position:absolute;
+	right:5px;
+	top:5px;
+	z-index:1000;
+	cursor:pointer;
+}
+.imgzoom_pack .imgzoom_img{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	overflow:hidden;
+	vertical-align: middle;
+}
+.imgzoom_pack .imgzoom_img img{
+	width:100%;
+	position:absolute;
+	top:50%;
+	/*transform: translateY(-50%);*/
+}
+
+/*触碰日志*/
+#touchLog{
+	position: absolute;
+	color:#fff;
+	z-index: 100;
+}
+</style>
+</head>
+<body>
+	<div id="swiper-container1" class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" data-index="0"><img src="img/1.jpg" /></div>
+			<div class="swiper-slide" data-index="1"><img src="img/2.jpg"  /> </div>
+			<div class="swiper-slide" data-index="2"><img src="img/3.jpg"/></div>
+		</div>
+		<div class="swiper-pagination swiper-pagination1"></div>
+	</div>
+	<section class="imgzoom_pack">
+		<!--<div class="imgzoom_x">X</div>-->
+		<div class="imgzoom_img"><img src="" /></div>
+		<!--<div id="touchLog">12345</div>-->
+	</section>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/swiperTest3_scale.js"></script>
+<script>
+	var swiper1 = new Swiper('#swiper-container1', {
+        pagination: '.swiper-pagination1',
+        paginationClickable: true
+        //autoplay:1000
+    });
+    var lgImg={
+    	swiper:null,
+    	loaded:false,
+    	initSwiper:function(setting){
+    		var defaultSet={pagination: '.swiper-pagination2',paginationClickable: true,initialSlide:0};
+    		defaultSet=$.extend(defaultSet,setting);
+      		this.swiper = new Swiper('#swiper-container2', defaultSet);
+    	},
+    	show:function(e){
+    		$(".lgimg-box").show();
+    		this.initSwiper({initialSlide:actIndex});
+    		return;
+    		var actIndex=$(e).data("index");
+    		//没有加载过，需要初始化显示图片
+    		if(!this.loaded){
+    			this.loaded=true;
+    			//里边的图片应该现在才加载
+    			var lgImgs=[{id:'img_1',src:'img/1.jpg'},{id:'img_2',src:'img/2.jpg'},{id:'img_3',src:'img/3.jpg'}];
+    			var swiperSlideHtml='';
+    			for(var i=0;i<lgImgs.length;i++){
+    				swiperSlideHtml+='<div class="swiper-slide"><img id="'+lgImgs[i].id+'" src="'+lgImgs[i].src+'" /></div>'
+    			}
+    			$("#swiper-container2 .swiper-wrapper").html('').html(swiperSlideHtml);
+    		}
+    		$(".lgimg-box").show();
+    		this.initSwiper({initialSlide:actIndex});
+    	},
+    	hide:function(e){
+    		try{
+				lgImg.swiper.destroy(true);		
+			}catch(ex){}
+    		$('.lgimg-box').hide();
+    		var actIndex=this.swiper.activeIndex;
+    		//此时应该重新设置swiper的活动索引
+    		swiper1.slideTo(actIndex);
+    	}
+    }
+    $(function(){
+		ImagesZoom.init({
+			"elem": "#swiper-container1"
+		});
+    });
+</script>
+</html>
